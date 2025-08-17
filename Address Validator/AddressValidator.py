@@ -11,10 +11,10 @@ def addressVal(address):
 
     return True
 
-print("This program will decide if your input is a valid email address")
+print("\n\nThis program will decide if your input is a valid email address")
 while(True):
     print("A valid email address needs an '@' symbol and a '.'")
-    x = input("Input your email address(type 'exit' to quit): ")
+    x = input("\nInput your email address(type 'exit' to quit): ")
     
     if x.lower() == "exit":
         break
