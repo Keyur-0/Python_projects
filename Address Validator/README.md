@@ -2,6 +2,11 @@
 
 It checks if an email contains "@" and ".". 
 
-# Things to Fix
+# Language
+    python
 
-    It only check if "@" and "." are in the input not there placement so somthing like this "abc@.com" is Valid.
+# How to run
+    Open the file AddressValidator.py file with the python IDE and hit run.
+
+# Author
+    Keyur-0
