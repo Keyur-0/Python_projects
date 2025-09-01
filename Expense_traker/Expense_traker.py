@@ -8,10 +8,37 @@ class ExpenseTracker:
             self.expenses[category] = []
         self.expenses[category].append((date, amount))
 
-#test the function
-tracker = ExpenseTracker()
-tracker.add_expense("2025-08-31", 200, "Food")
-tracker.add_expense("2025-08-30", 100, "Food")
-tracker.add_expense("2025-08-29", 500, "Transport")
+    def add_category(self, category):
+        if category not in self.categories:
+            self.categories[category] = 0
 
-print(f"{tracker.expenses}")
+    def view_expenses(self):
+        for category, items in self.expenses.items():
+            total_amount = sum(amount for _, amount in items)
+            print(f"{category}: ${total_amount}")
+
+tracker = ExpenseTracker()
+
+while True:
+    print("\nExpense Tracker Menu:")
+    print("1. Add Expense")
+    print("2. Add Category")
+    print("3. View Expenses")
+    print("5.Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        date = input("Enter date (YYYY-MM-DD): ")
+        amount = float(input("Enter amount: "))
+        category = input("Enter category: ")
+        tracker.add_expense(date, amount, category)
+    elif choice == "2":
+        category = input("Enter category: ")
+    elif choice == "3":
+        tracker.view_expenses()
+    elif choice == "5":
+        print("Exiting Expense Tracker. Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please try again.")
