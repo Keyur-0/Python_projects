@@ -17,6 +17,11 @@ class ExpenseTracker:
             total_amount = sum(amount for _, amount in items)
             print(f"{category}: ${total_amount}")
 
+    def view_categories(self):
+        print("Categories: ")
+        for category in self.expenses.keys():
+            print(category)
+
 tracker = ExpenseTracker()
 
 while True:
@@ -24,6 +29,7 @@ while True:
     print("1. Add Expense")
     print("2. Add Category")
     print("3. View Expenses")
+    print("4. view Categories")
     print("5.Exit")
 
     choice = input("Enter your choice: ")
@@ -37,6 +43,8 @@ while True:
         category = input("Enter category: ")
     elif choice == "3":
         tracker.view_expenses()
+    elif choice == "4":
+        tracker.view_categories()
     elif choice == "5":
         print("Exiting Expense Tracker. Goodbye!")
         break
