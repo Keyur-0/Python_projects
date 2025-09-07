@@ -15,12 +15,12 @@ def play_word_jumble():
     print("Jumbled word: ", jumbled_word)
 
     guess = input("Your guess: ").lower()
-
+    num_of_guess = 1
+    
     while guess != word_to_guess:
         print("Incorrect guess. try again!")
         guess = input("Your guess: ").lower()
-
-    print("Congratulations! You've guessed the word correctly: ",word_to_guess)
+        num_of_guess = num_of_guess + 1
+    print(f"Congratulations! After {num_of_guess} guesses You've guessed the word correctly: ",word_to_guess)
 
 play_word_jumble()
-#add the number of times the user had to guess in order to get the correct word   
