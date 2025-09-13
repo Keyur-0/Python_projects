@@ -11,7 +11,6 @@ PLAYER_2 = 2
 board = [[EMPTY] * COLS for _ in range(ROWS)]
 current_player = PLAYER_1
 
-#To drop a new piece in the board
 def drop_piece(col):
     global current_player
     row = get_next_open_row(col)
@@ -78,3 +77,10 @@ for col in range(COLS):
 
 # Create the game board
 canvas = tk.Canvas(root, width=350, height=300)
+canvas.grid(row=0, column=0, rowspan=ROWS, columnspan=COLS)
+
+# Initial drawing of the board
+draw_board()
+
+# Run the main loop
+root.mainloop()
